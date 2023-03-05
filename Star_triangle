@@ -1,0 +1,23 @@
+#include <iostream>
+using namespace std;
+int main(void)
+{
+	int c,r,e,i;
+	
+	for(r=1; r<=6; r++)
+	{
+		for(e=5; e>=r; e--)
+		cout<<" ";
+		
+		for(c=1; c<=r; c++)
+		cout<<"*";
+		
+		for(i=1; i<r; i++)
+		cout<<"*";
+		
+		cout<<"\n";		
+		}	
+	
+	
+	return 0;
+}
