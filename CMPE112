@@ -1,0 +1,23 @@
+#include <iostream>
+//Write a complete C++ programming that would get two integer numbers and calculate their sum.
+
+using namespace std;
+
+int main()
+{
+    
+	int num1,num2,sum;
+	
+	cout<<"Please enter number1: ";
+	cin>>num1;
+	
+	cout<<"Please enter number2: ";
+	cin>>num2;
+	
+	sum=num1+num2;
+	
+	cout<<"Sum is: "<<sum;
+
+
+    return 0;
+}
