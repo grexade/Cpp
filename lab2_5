@@ -1,0 +1,21 @@
+#include <iostream>
+using namespace std;
+
+int main(){
+	int radius , height , volume  ;
+	float pi=3.14;
+	
+	cout<<"Please enter radius: ";
+	cin>>radius;
+	
+	cout<<"Please enter height: ";
+	cin>>height;
+
+	
+	volume=pi*radius*radius*height;
+	
+	cout<<"volume of that cylinder is "<<volume;
+	
+	
+	return 0;
+}
