@@ -1,5 +1,4 @@
 #include <iostream>
-//Write a complete C++ programming that would get two integer numbers and calculate their sum.
 
 using namespace std;
 
