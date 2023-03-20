@@ -1,0 +1,44 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    double num1, num2;
+    char operat;
+
+    cout << "Enter operand1: ";
+    cin >> num1;
+
+    cout << "Enter an operator: ";
+    cin >> operat;
+    
+    
+	cout << "Enter operand2: ";
+    cin >> num2;
+    
+    
+    switch(operat)
+    {
+        case '+':
+            cout << "result of "<<num1<<operat<<num2<<" is "<<num1 + num2;
+            break;
+
+        case '-':
+            cout <<"result of "<<num1<<operat<<num2<<" is "<< num1 - num2;
+            break;
+
+        case '*':
+            cout << "result of "<<num1<<operat<<num2<<" is "<<num1 * num2;
+            break;
+
+        case '/':
+            cout << "result of "<<num1<<operat<<num2<<" is "<<num1 / num2;
+            break;
+
+        case '%':
+            cout <<"result of "<<num1<<operat<<num2<<" is "<< (int)num1 % (int)num2;
+            break;
+    }
+    
+    return 0;
+}
