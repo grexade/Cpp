@@ -1,0 +1,25 @@
+#include <iostream>
+using namespace std;
+int main(void){
+	
+	int ang1, ang2, ang3, sum;
+	
+	cout<<"PLease enter angle 1 : ";
+	cin>>ang1;
+	
+	cout<<"PLease enter angle 2 : ";
+	cin>>ang2;
+	
+	cout<<"PLease enter angle 3 : ";
+	cin>>ang3;
+		
+	sum = ang1+ang2+ang3;
+	cout<<"Sum: "<<sum;
+	
+	if(sum==180 && ang1!=0 && ang2!=0 && ang3!=0)
+	cout<<endl<<"Triangle is Valid";
+	else
+	cout<<endl<<"Triangle is not Valid";
+	
+	return 0 ; 
+}
