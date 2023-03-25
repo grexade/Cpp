@@ -1,0 +1,19 @@
+#include <iostream>
+using namespace std;
+int main(void){
+	
+	int num1, num2;
+	
+	cout<<"please enter Number 1:";
+	cin>>num1;
+	
+	cout<<"please enter Number 2:";
+	cin>>num2;
+	
+	if(num1>num2)
+		cout<<"biggest number is : "<<num1;
+	else 
+		cout<<"biggest number is : "<<num2;
+		
+	return 0 ; 
+}
