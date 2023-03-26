@@ -1,0 +1,20 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+    float fahrenheit, celsius;
+    int i;
+    cout<<"Celsius to Fahrenheit Coversion "<<endl;
+    //cin>>fahrenheit;
+    
+    for(i=20; i<=100; i+=5)
+    {
+        cout<<i<<"F";
+        celsius = 5 * (i-32)/9;
+        cout<<"\tEquivalent Temperature in Celsius = "<<celsius<<"C";
+        cout<<endl;
+        
+        }
+   
+    return 0;
+}
