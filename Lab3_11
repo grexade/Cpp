@@ -1,0 +1,19 @@
+
+#include <iostream>
+using namespace std;
+int main() {
+
+    
+    int n, arr[10], sum = 0, i;
+    
+    for (i = 0; i < 10; i++){
+        
+    cout<<"Please enter the price for item "<<i+1<<" : ";
+    cin >> arr[i];
+    sum +=arr[i];
+    
+    }
+    cout<<"Total is: "<<sum;
+
+    return 0;
+}
