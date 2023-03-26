@@ -1,0 +1,12 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+   int num = 1;
+   cout << "Number\tCube\n";
+   while (num <= 10) {
+      cout << num << "\t" << num*num*num << endl;
+      num++;
+   }
+   return 0;
+}
