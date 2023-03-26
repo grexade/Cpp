@@ -1,0 +1,25 @@
+
+#include <iostream>
+using namespace std;
+int main() {
+
+    
+   
+    int sum_even = 0, sum_odd=0,  val;
+    
+    cout<<"Please enter a value greater than 40!";
+    cin>>val;
+    
+    for (int i = 0; i <= val; i++ ) {
+        if (i%2==0)
+            sum_even += i;
+        else
+            sum_odd += i;
+    
+    }
+    cout << "The sum of the even numbers is: " << sum_even <<endl;
+    cout << "The sum of the odd numbers is: " << sum_odd <<endl;
+
+
+    return 0;
+}
