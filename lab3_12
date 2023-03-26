@@ -28,3 +28,31 @@ int main() {
 
    return 0;
 }
+
+#include <iostream>
+using namespace std;
+
+int main() {
+   int num, max, count = 1;
+
+   // Get the first number from the user
+   cout << "Enter number " << count << ": ";
+   cin >> num;
+   max = num;
+
+   // Get the remaining 4 numbers from the user
+   count++;
+   while (count <= 5) {
+      cout << "Enter number " << count << ": ";
+      cin >> num;
+      if (num > max) {
+         max = num;
+      }
+      count++;
+   }
+
+   // Display the maximum number
+   cout << "The greatest number entered is: " << max << endl;
+
+   return 0;
+}
