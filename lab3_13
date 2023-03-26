@@ -23,3 +23,32 @@ int main() {
 
     return 0;
 }
+
+
+#include <iostream>
+using namespace std;
+
+int main() {
+   int num, sumEven = 0, sumOdd = 0;
+
+   // Get a number greater than 40 from user
+   do {
+      cout << "Enter a number greater than 40: ";
+      cin >> num;
+   } while (num <= 40);
+
+   // Calculate the sum of all even and odd numbers from 0 up to the entered number
+   for (int i = 0; i <= num; i++) {
+      if (i % 2 == 0) {
+         sumEven += i;
+      } else {
+         sumOdd += i;
+      }
+   }
+
+   // Display the sum of even and odd numbers
+   cout << "Sum of even numbers: " << sumEven << endl;
+   cout << "Sum of odd numbers: " << sumOdd << endl;
+
+   return 0;
+}
