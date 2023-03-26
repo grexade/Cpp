@@ -18,3 +18,24 @@ int main()
    
     return 0;
 }
+
+
+#include <iostream>
+using namespace std;
+
+int main() {
+   int fahrenheit = 20;
+
+   // Display the conversion table header
+   cout << "Fahrenheit   Celsius" << endl;
+   cout << "---------   -------" << endl;
+
+   // Display the conversion table for fahrenheit values from 20 to 100 in steps of 5
+   while (fahrenheit <= 100) {
+      int celsius = 5 * (fahrenheit - 32) / 9;
+      cout << fahrenheit << "           " << celsius << endl;
+      fahrenheit += 5;
+   }
+
+   return 0;
+}
