@@ -1,0 +1,15 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+   
+   int n,k,sum=0;
+   
+   for(k=2;k<=6;k++){
+       
+       sum += ((k*k) + k);
+       }
+
+    cout<<"sum is : "<<sum;
+   return 0;
+}
