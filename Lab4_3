@@ -1,0 +1,23 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main()
+{
+    // Write C++ code here
+    int w, x, y, z;
+    cout << "Please enter a value to w : ";
+    cin >> w;
+    cout << "Please enter a value to x : ";
+    cin >> x;
+    cout << "Please enter a value to y : ";
+    cin >> y;
+    cout << "Please enter a value to z : ";
+    cin >> z;
+
+    double sum = pow(w, x) + pow(y, 2) + exp(z);
+
+    cout << "The result is " << sqrt(sum);
+
+    return 0;
+}
