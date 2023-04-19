@@ -1,0 +1,20 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+int main(void){
+	
+	int a,b;
+	float m,n;
+	cout<<"Enter a :";
+	cin>>a;
+	cout<<"Enter b: ";
+	cin>>b;
+	
+	m = 5 + 2*log10(pow(a,b));
+	n = 2 / log10(exp(2));
+	cout<<"The result of the formular of a :" <<m<<endl;
+	cout<<"The result of the formular of b :" <<n<<endl;
+	cout<<"The remainder as float is:" <<fmod(m,n);
+	
+	return 0;
+}
