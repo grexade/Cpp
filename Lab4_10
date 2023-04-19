@@ -1,0 +1,28 @@
+#include <iostream>
+#include <cmath>
+#include <ctime>
+#include <cstdlib>
+using namespace std;
+int main(void){
+	
+	int	a, r, min, max;
+	min = 0, max= 20;
+	srand(time(NULL));
+	a = rand() %(max+1) ;
+	cout<<" the generated number is "<<a<<endl;
+	r = (a*a) + exp (2);
+	cout<<"R is : "<<r<<endl;
+		if (r>=0 && r<100)
+			cout<<"You can guess it man ";
+		else if (r>=100 && r<250)
+			cout<<"R is not easy to guess ";
+		else if (r>=250 && r<400)
+			cout<<"R value is bigger than I thought ";
+		else if (r>400)
+			cout<<"Wow! R value is bigger than I thought ";
+	
+	return 0;
+}
+
+
+
