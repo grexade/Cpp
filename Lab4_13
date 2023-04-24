@@ -1,0 +1,40 @@
+
+#include <iostream>
+using  namespace std;
+void showAlphabet(char);
+int main() {
+   char character;
+   cout<<"Please enter a character ";
+   cin>>character;
+   showAlphabet(character);
+    
+    return 0;
+}
+
+void showAlphabet(char character){
+   
+   char n;
+   
+   if(character =='z' or character == 'z'){
+       cout<<character<<" is the last character in the alphabet";
+       
+   }
+   else{
+       
+       cout<<"Rests of the Character(s) are: ";
+       
+       if(isupper(character)){
+           for(n=character+1; n <= 'Z'; n++)
+           {
+               cout<<n;
+           }
+       }
+       else{
+            for(n=character+1; n <= 'z'; n++)
+           {
+               cout<<n;
+           }
+       }
+   }
+
+}
