@@ -1,0 +1,34 @@
+#include <iostream>
+using namespace std;
+int totalHours(int);
+float average(int);
+int main() {
+    int n, emp[10], choice, totalMoney = 0;
+    
+    for(n=0; n<10; n++){
+        
+        cout<<"Please enter employee "<<n+1<<" salary: ";
+        cin>>emp[n];
+        totalMoney +=emp[n];
+    }
+    cout<<" 1- Calculate total hours that employees worked "<<endl;
+    cout<<" 2- Calculate average salary of employees "<<endl;
+    
+    cout<<"Please enter your choice : ";
+    cin>>choice;
+    if(choice==1){
+        cout<<" Total hours: "<<totalHours(totalMoney);
+    }
+    else
+        cout<<" Total hours: "<<average(totalMoney);
+        
+    return 0;
+}
+
+int totalHours(int totalMoney){
+    return totalMoney/20;
+}
+
+float average(int totalMoney){
+   return totalMoney/10; 
+}
