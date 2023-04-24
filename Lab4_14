@@ -1,0 +1,33 @@
+
+#include <iostream>
+using  namespace std;
+int raiseToPower(int, int);
+int main() {
+   int x,y;
+   double total;
+   
+   cout<<" Enter the base value: ";
+   cin>>x;
+   cout<<" Enter the exponent value: ";
+   cin>>y;
+   
+   total = raiseToPower(x,y);
+    
+    cout<<"The power of "<<x<<" by "<<y<<" is "<< total;
+    return 0;
+}
+
+int raiseToPower(int base, int exponent){
+    
+    double res= 1;
+    int n;
+    
+    if(exponent == 0)
+    return 1;
+    for(n =1; n<=exponent; n++)
+    {
+        res*=base;
+    }
+    
+    return res;
+}
