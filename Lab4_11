@@ -1,0 +1,22 @@
+
+#include <iostream>
+using  namespace std;
+void totalAges();
+int main() {
+   
+    totalAges();
+    
+    return 0;
+}
+
+void totalAges(){
+    int i, sum = 0, age[10];
+    for(i=0; i<10; i++){
+        cout<<" Please enter student"<<i+1<<" age: ";
+        cin>>age[i];
+        sum += age[i];
+        
+    }
+    cout<<"The Total is: "<<sum;
+    
+}
