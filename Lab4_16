@@ -1,0 +1,59 @@
+
+#include <iostream>
+#include <cmath>
+using  namespace std;
+float calculateExponent(int,int);
+int calculatePower(int,int);
+float calculateAbsolute (int,int);
+float calculateSquareRoot(int,int);
+int main() {
+    int x,y, choice;
+    float result;
+    
+   cout<<"Please enter value of x: ";
+   cin>>x;
+    cout<<"Please enter value of y: "; 
+    cin>>y;
+
+
+cout<<"1.- To call calculateExponent\n"; 
+cout<<"2.- To call calculatePower\n"; 
+cout<<"3.- To call calculateAbsolute\n"; 
+cout<<"4.- To call calculateSquareRoot\n"; 
+cout<<"Please enter your choice: "; 
+cin>>choice;
+switch(choice){
+    case 1:
+        result=calculateExponent(x,y);
+        break;
+    case 2:
+        result=calculatePower(x,y);
+        break;
+    case 3:
+        result=calculateAbsolute (x,y);
+        break;
+    case 4:
+        result=calculateSquareRoot(x,y);
+        break;
+
+}
+cout<<"The result is: "<<result;
+return 0;
+
+}
+
+float calculateExponent(int x,int y){
+    return exp(x)+y;
+}
+
+int calculatePower(int x,int y){
+    return pow(x,y)+ x+y*y;
+}
+
+float calculateAbsolute(int x,int y){
+    return -y*y +x;
+}
+
+float calculateSquareRoot(int x,int y){
+    return sqrt(x+y*y);
+}
