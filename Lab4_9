@@ -1,64 +1,42 @@
 #include <iostream>
 #include <cmath>
-
-// #include <cstdlib>
 using namespace std;
 
 int main()
 {
-    // Write C++ code here
     int choice, b, x, y;
     float sum, numerat, denom, side;
-    cout << "Calculate sin" << endl;
-    cout << "Calculate cos" << endl;
-    cout << "Calculate tan" << endl;
+    cout << "1-Calculate sin" << endl;
+    cout << "2-Calculate cos" << endl;
+    cout << "3-Calculate tan" << endl;
 
     cout << "Please make your choice : ";
     cin >> choice;
+    
+    cout <<endl<< "Please enter a value to b : ";
+    cin >> b;
+    cout << "Please enter a value to x : ";
+    cin >> x;
+    cout << "Please enter a value to y : ";
+    cin >> y;
 
     switch (choice)
     {
-
     case 1:
-
-        cout << "Please enter a value to b : ";
-        cin >> b;
-        cout << "Please enter a value to x : ";
-        cin >> x;
-        cout << "Please enter a value to y : ";
-        cin >> y;
-
         sum = pow(x, b) + sqrt(b + pow(y, x));
         cout << " The result of formular is: " << sin(sum);
         break;
 
     case 2:
-
-        cout << "Please enter a value to b : ";
-        cin >> b;
-        cout << "Please enter a value to x : ";
-        cin >> x;
-        cout << "Please enter a value to y : ";
-        cin >> y;
-
         side = exp(b) / (x + pow(x, 5));
         sum = y + side;
         cout << " The result of formular is: " << cos(sum);
         break;
 
     case 3:
-
-        cout << "Please enter a value to b : ";
-        cin >> b;
-        cout << "Please enter a value to x : ";
-        cin >> x;
-        cout << "Please enter a value to y : ";
-        cin >> y;
-
         numerat = b + pow(x, y);
         denom = pow(x, 5) + (exp(2) * y);
         sum = x + (numerat / denom);
-
         cout << " The result of formular is: " << tan(sum);
         break;
 
@@ -66,6 +44,6 @@ int main()
         cout << "Wrong choice ";
         break;
     }
-
+    
     return 0;
 }
