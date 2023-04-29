@@ -1,19 +1,18 @@
 #include <iostream>
 #include <cmath>
 using namespace std;
-
 int main()
 {
-    // Write C++ code here
     int a, b;
+    float sum;
     cout << "Please enter a value to a : ";
     cin >> a;
     cout << "Please enter a value to b : ";
     cin >> b;
 
-    double sum = pow(a, 2) + pow(b, 3);
+    sum = sqrt(pow(a,2) + pow(b,3));
 
-    cout << "The square root of the :" << sum << " is " << sqrt(sum);
+    cout << "The square root of " << sum << " is " << sum;
 
     return 0;
 }
