@@ -12,7 +12,7 @@ int main()
     float nume = pow(2,b) + exp(4);
     float denom = log(x) + log10(5);
 
-    cout << "The result is " << -1 * (nume / denom);
+    cout << "The result is " << fabs(-1 * (nume / denom));
 
     return 0;
 }
