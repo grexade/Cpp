@@ -5,12 +5,12 @@
 using namespace std;
 int main(void){
 	
-	int	a, r, min, max;
+	int a, r, min, max;
 	min = 0, max= 20;
 	srand(time(NULL));
 	a = rand() %(max+1) ;
 	cout<<" the generated number is "<<a<<endl;
-	r = (a*a) + exp (2);
+	r = pow(a,2) + exp(2);
 	cout<<"R is : "<<r<<endl;
 		if (r>=0 && r<100)
 			cout<<"You can guess it man ";
