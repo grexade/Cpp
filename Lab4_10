@@ -5,10 +5,11 @@
 using namespace std;
 int main(void){
 	
-	int a, r, min, max;
-	min = 0, max= 20;
+	int a, r, max;
+	max= 20;
 	srand(time(NULL));
 	a = rand() %(max+1) ;
+	//a = rand() %(max-min+1) + min;
 	cout<<" the generated number is "<<a<<endl;
 	r = pow(a,2) + exp(2);
 	cout<<"R is : "<<r<<endl;
