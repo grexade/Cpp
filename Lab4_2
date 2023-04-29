@@ -10,9 +10,9 @@ int main()
     cout << "Please enter a value to b : ";
     cin >> b;
 
-    sum = sqrt(pow(a,2) + pow(b,3));
+    sum = pow(a,2) + pow(b,3);
 
-    cout << "The square root of " << sum << " is " << sum;
+    cout << "The square root of " << sum << " is " << sqrt(sum);
 
     return 0;
 }
