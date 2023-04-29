@@ -1,18 +1,16 @@
 #include <iostream>
 #include <cmath>
 using namespace std;
-
 int main()
 {
-    // Write C++ code here
     int b, x;
     cout << "Please enter a value to w : ";
     cin >> b;
     cout << "Please enter a value to x : ";
     cin >> x;
 
-    double nume = pow(2, b) + exp(4);
-    double denom = log(x) + log10(5);
+    float nume = pow(2,b) + exp(4);
+    float denom = log(x) + log10(5);
 
     cout << "The result is " << -1 * (nume / denom);
 
