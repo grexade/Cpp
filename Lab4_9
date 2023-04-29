@@ -30,6 +30,7 @@ int main()
     case 2:
         side = exp(b) / (x + pow(x, 5));
         sum = y + side;
+        //num = y + (exp(b) / (x+ pow(x,5)) );
         cout << " The result of formular is: " << cos(sum);
         break;
 
@@ -37,6 +38,7 @@ int main()
         numerat = b + pow(x, y);
         denom = pow(x, 5) + (exp(2) * y);
         sum = x + (numerat / denom);
+        //num = x + ((b+pow(x,y) )/ (pow(x,5)+(exp(2) * y)));
         cout << " The result of formular is: " << tan(sum);
         break;
 
