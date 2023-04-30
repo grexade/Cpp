@@ -1,0 +1,39 @@
+#include <iostream>
+
+using namespace std;
+
+int isEven(int number);
+
+int main()
+{
+    int number;
+
+   
+    cout << "Enter a number: ";
+    cin >> number;
+
+   
+    if (isEven(number))
+    {
+        cout << "The given number is even." << endl;
+    }
+    else
+    {
+        cout << "The given number is odd." << endl;
+    }
+
+    return 0;
+}
+
+int isEven(int number)
+{
+    if (number % 2 == 0)
+    {
+        return 1;
+    }
+    else
+    {
+        return 0;
+    }
+}
+
