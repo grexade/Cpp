@@ -1,0 +1,59 @@
+#include <iostream>
+
+using namespace std;
+
+void getNumber();
+double calculate(int num1, int num2, char operand);
+
+int main()
+{
+    getNumber();
+
+    return 0;
+}
+
+void getNumber()
+{
+    int num1, num2;
+    char operand;
+
+    cout << "Enter first number: ";
+    cin >> num1;
+
+    cout << "Enter second number: ";
+    cin >> num2;
+
+    cout << "Enter an operand (+, -, *, /): ";
+    cin >> operand;
+
+    double result = calculate(num1, num2, operand);
+
+    cout << "The result is " << result << endl;
+}
+
+double calculate(int num1, int num2, char operand)
+{
+    double result;
+
+    switch (operand)
+    {
+        case '+':
+            result = num1 + num2;
+            break;
+        case '-':
+            result = num1 - num2;
+            break;
+        case '*':
+            result = num1 * num2;
+            break;
+        case '/':
+            result = (double) num1 / num2;
+            break;
+        default:
+            cout << "Invalid operand" << endl;
+            result = 0.0;
+    }
+
+    return result;
+}
+
