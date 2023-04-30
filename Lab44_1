@@ -1,0 +1,37 @@
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+double y(int x, int y);
+double f(int x, int y, int z);
+
+int main()
+{
+    int x, y, z;
+    double result_a, result_b;
+
+   
+    cout << "Enter three numbers (x, y, z): ";
+    cin >> x >> y >> z;
+
+   
+    result_a = y(x, y);
+    result_b = f(x, y, z);
+
+   
+    cout << "Result of equation (a): " << result_a << endl;
+    cout << "Result of equation (b): " << result_b << endl;
+
+    return 0;
+}
+
+double y(int x, int y)
+{
+    return 2 * pow(x, y) + sqrt(y);
+}
+
+double f(int x, int y, int z)
+{
+    return (z * exp(x) * log(x / y)) / log(2 * y / z);
+}
