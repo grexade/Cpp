@@ -1,0 +1,52 @@
+#include <iostream>
+
+using namespace std;
+
+double quizPercentage(int quiz);
+double midtermPercentage(int midterm);
+double finalPercentage(int final);
+void calcAverage(double quiz, double midterm, double final);
+
+int main()
+{
+    int quiz, midterm, final;
+
+    cout << "Enter quiz marks: ";
+    cin >> quiz;
+
+    cout << "Enter midterm marks: ";
+    cin >> midterm;
+
+    cout << "Enter final marks: ";
+    cin >> final;
+
+    double quizPercent = quizPercentage(quiz);
+    double midtermPercent = midtermPercentage(midterm);
+    double finalPercent = finalPercentage(final);
+
+    calcAverage(quizPercent, midtermPercent, finalPercent);
+
+    return 0;
+}
+
+double quizPercentage(int quiz)
+{
+    return quiz * 0.2;
+}
+
+double midtermPercentage(int midterm)
+{
+    return midterm * 0.3;
+}
+
+double finalPercentage(int final)
+{
+    return final * 0.5;
+}
+
+void calcAverage(double quiz, double midterm, double final)
+{
+    double average = quiz + midterm + final;
+    cout << "Average: " << average << endl;
+}
+
