@@ -20,7 +20,7 @@ int main() {
         cout<<" Total hours: "<<totalHours(totalMoney);
     }
     else
-        cout<<" Total hours: "<<average(totalMoney);
+        cout<<" Average Salary: "<<average(totalMoney);
         
     return 0;
 }
