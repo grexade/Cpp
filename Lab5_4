@@ -1,0 +1,23 @@
+#include <iostream>
+using namespace std;
+
+void decimalToBinary(int dec) {
+    if (dec > 0) {
+        decimalToBinary(dec / 2);
+        cout << dec % 2;
+    }
+}
+
+int main() {
+    int dec;
+
+    cout << "Input any decimal number: ";
+    cin >> dec;
+
+    cout << "The Binary value of decimal no. " << dec << " is: ";
+    decimalToBinary(dec);
+
+    cout << endl;
+
+    return 0;
+}
