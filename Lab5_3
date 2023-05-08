@@ -1,0 +1,20 @@
+#include <iostream>
+using namespace std;
+
+
+int sumOfDigits(int num) {
+    if (num == 0)
+        return 0;
+
+    return (num % 10) + sumOfDigits(num / 10);
+}
+
+int main() {
+    int num;
+
+    cout << "Input any number to find the sum of digits: ";
+    cin >> num;
+    cout << "The sum of digits of " << num << " = " << sumOfDigits(num) ;
+
+    return 0;
+}
