@@ -1,0 +1,40 @@
+#include <iostream>
+using namespace std;
+
+void printEven(int start, int end) {
+    if (end >= start) {
+        
+        if (start % 2 == 0) {
+        cout << start << " "; }
+    printEven(start+1, end);
+    }
+}
+//@grexade
+void printOdd(int start, int end) {
+    if (end >= start) {
+        
+        if (start % 2 != 0) {
+        cout << start << " "; }
+    printOdd(start+1, end);
+    }
+}
+
+
+int main() {
+    int start, end;
+    cout << "Enter the starting number: ";
+    cin >> start;
+    cout << "Enter the ending number: ";
+    cin >> end;
+
+    cout << "All even numbers from " << start << " to " << end << " are: ";
+    //@grexade
+    printEven(start, end);
+    cout << endl;
+
+    cout << "All odd numbers from " << start << " to " << end << " are: ";
+    printOdd(start, end);
+    cout << endl;
+
+    return 0;
+}
