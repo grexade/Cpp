@@ -3,7 +3,7 @@ using namespace std;
 
 
 bool isPrime(int num, int divisor = 2) {
-    // Base cases
+   
     if (num <= 2)
         return (num == 2);
     if (num % divisor == 0)
@@ -11,7 +11,7 @@ bool isPrime(int num, int divisor = 2) {
     if (divisor * divisor > num)
         return true;
     
-    // Recursive call
+    
     return isPrime(num, divisor + 1);
 }
 
