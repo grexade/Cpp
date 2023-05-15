@@ -1,0 +1,64 @@
+#include <iostream>
+using namespace std;
+int main(void){
+	int myArray[5],i;
+	int key,x;
+	
+	for(i=0; i<5;i++){
+		cout<<"Enter number"<<i+1<<" : ";
+		cin>>myArray[i];		
+	}
+	cout<<"enter a key Number: ";
+	cin>>key;
+	
+	for(i=0; i<5;i++){
+		if( myArray[i]==key)
+			 {x=1;}
+		else
+			 x=0;		
+	}
+	
+	if(x==1){
+		cout<<"key is found";
+	}
+	else
+	cout<<"key not found";
+	
+	
+	return 0;
+}
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int numbers[5];
+    int key;
+
+    
+
+    for (int i = 0; i < 5; ++i) {
+        cout << "Number " << (i + 1) << ": ";
+        cin >> numbers[i];
+    }
+
+    cout << "Enter the key number: ";
+    cin >> key;
+
+    bool keyFound = false;
+
+    for (int i = 0; i < 5; ++i) {
+        if (numbers[i] == key) {
+            keyFound = true;
+            break;
+        }
+    }
+
+    if (keyFound) {
+        cout << "Key is found\n";
+    } else {
+        cout << "Key is not found";
+    }
+
+    return 0;
+}
