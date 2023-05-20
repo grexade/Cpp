@@ -1,0 +1,17 @@
+#include <iostream>
+using namespace std;
+int main(void){
+	
+	string fullname[2];
+	
+	cout<<"Enter your name : ";
+	getline(cin, fullname[0]);
+	
+	cout<<"Enter your surname : ";
+	getline(cin, fullname[1]);
+	
+	cout<<"Your name is : "<<endl<<fullname[0]<<" "<<fullname[1];
+	
+	return 0;
+}
+
