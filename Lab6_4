@@ -13,9 +13,9 @@ int main(void){
 	
 	for(i=0; i<5;i++){
 		if( myArray[i]==key)
-			 {x=1;}
-		else
-			 x=0;		
+			 {x=1;
+			 break;}
+			
 	}
 	
 	if(x==1){
@@ -28,18 +28,21 @@ int main(void){
 	return 0;
 }
 
+
+
+
 #include <iostream>
 using namespace std;
 
 int main() {
-    int numbers[5];
-    int key;
+    int num[5];
+    int key,n;
 
     
 
-    for (int i = 0; i < 5; ++i) {
-        cout << "Number " << (i + 1) << ": ";
-        cin >> numbers[i];
+    for (n=0; n<5; n++) {
+        cout << "Enter Number " <<n+1<< ": ";
+        cin >> num[n];
     }
 
     cout << "Enter the key number: ";
@@ -47,8 +50,8 @@ int main() {
 
     bool keyFound = false;
 
-    for (int i = 0; i < 5; ++i) {
-        if (numbers[i] == key) {
+    for (n=0; n<5; n++) {
+        if (num[n] == key) {
             keyFound = true;
             break;
         }
