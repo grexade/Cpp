@@ -1,0 +1,18 @@
+#include <iostream>
+using namespace std;
+int main(void){
+	
+	int sunny[10],n;
+	
+	for(n=0; n<10;n++){
+		cout<<"Enter number "<<n+1<<" into the array: ";
+		cin>>sunny[n];
+	}
+	
+	for(n=0; n<10;n++){
+		cout<<"The array number "<<n+1<<" is: "<<sunny[n]<<endl;
+	}
+	
+	return 0;
+}
+
