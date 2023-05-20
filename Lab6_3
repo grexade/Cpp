@@ -1,0 +1,19 @@
+#include <iostream>
+using namespace std;
+int main(void){
+	
+	int sunny[10],n,sum=0;
+	
+	for(n=0; n<10;n++){
+		cout<<"Enter number "<<n+1<<" : ";
+		cin>>sunny[n];
+		sum += sunny[n];
+	}
+	
+	cout<<"The sum is : "<<sum<<"endl";
+	cout<<"The average is : "<<sum/10;
+	
+	
+	return 0;
+}
+
