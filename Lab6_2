@@ -1,0 +1,29 @@
+#include <iostream>
+using namespace std;
+int main(void){
+	
+	int sunny[5],n;
+	
+	for(n=0; n<5;n++){
+		cout<<"Enter number "<<n+1<<" into the array: ";
+		cin>>sunny[n];
+	}
+	
+	int max = sunny[0];
+	int min = sunny[0];
+	
+	
+	for(n=0; n<5;n++){
+		if (sunny[n] > max)
+			max = sunny[n];
+		
+		if (sunny[n] < min)
+			min = sunny[n];
+		
+	}
+	
+	cout<<"The maximum number is: "<<max<<endl;
+	cout<<"The minimum number is: "<<min;
+	return 0;
+}
+
