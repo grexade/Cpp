@@ -1,0 +1,39 @@
+
+#include <iostream>
+using namespace std;
+int main() {
+   
+   
+   int N;
+   
+   cout<<"Please enter a value for N: ";
+   cin>>N;
+   
+   int box[N][N],i,j;
+   int sum_diam = 0;
+   
+   cout<<" Enter "<<N<<" * "<<N<<" elements of a 2D array: "<<endl;
+   
+   for(i = 0; i<N; i++){
+       
+       for(j=0; j<N; j++){
+           cin>>box[i][j];
+       }
+   }
+   
+   for(i = 0; i<N; i++){
+       
+       for(j=0; j<N; j++){
+           if(i==j);
+            sum_diam += box[i][j];
+           
+           if((i+j) == (N-1))
+                sum_diam += box[i][j];
+           
+       }
+   }
+   
+   cout<<"The sum of the diameter is: "<<sum_diam;
+
+    return 0;
+}
