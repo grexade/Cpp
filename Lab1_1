@@ -1,0 +1,16 @@
+#include <iostream>
+using namespace std;
+
+int main(void)
+{
+    int n1,n2;
+    cout << "Please enter number1: ";
+    cin >> n1;
+
+    cout << "Please enter number2: ";
+    cin >> n2;
+    
+    cout << "The sum is: " << n1+n2 << endl;
+    return 0;
+}
+Write a complete C++ programming that would get two integer numbers and calculate their sum.
