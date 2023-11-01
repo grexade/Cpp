@@ -1,0 +1,41 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+int main(void){
+	
+	int choice,area, rad, pi = 3.142, hei;
+	
+	cout<<"1- Calculate the volume of the cube"<<endl;
+	cout<<"2- Calculate the area of the sphere"<<endl;
+	cout<<"3- Calculate the area of the cylinder"<<endl;
+	cout<<"Enter a choice (1-3) ";
+	cin>>choice;
+	
+	switch(choice){
+		
+		case 1: 
+			cout<<"..... volume of a cube....."<<endl;
+			cout<<"Please enter the area of the cube:";
+			cin>>area;
+			cout<<"volume of the cube is: "<<pow(area,3);
+			break;
+		
+		case 2:
+			cout<<"..... area of the sphere....."<<endl;
+			cout<<"Please enter the radius of the sphere:";
+			cin>>rad;
+			cout<<"Area of the sphere is: "<<4 * pi * pow(rad,2);
+			break;
+		
+		case 3:
+			cout<<"..... area of the cylinder....."<<endl;
+			cout<<"Please enter the radius of the cylinder:";
+			cin>>rad;
+			cout<<"Please enter the height of the cylinder:";
+			cin>>hei;
+			cout<<"Area of the cylinder is: "<<(2* pi*rad*hei)  + (2*pi*rad*rad);
+			break;
+	}
+	
+	return 0;
+}
