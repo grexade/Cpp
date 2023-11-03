@@ -1,0 +1,21 @@
+#include <iostream>
+using namespace std;
+int main(void){
+	
+	int costp, sellp, profit;
+	
+	cout<<"Enter the cost price: ";
+	cin>>costp;
+	cout<<"Enter the selling price: ";
+	cin>>sellp;
+	
+	profit = sellp-costp;
+	
+	if(profit>0)
+		cout<<"Profit";
+	else
+		cout<<"loss";
+	
+	
+	return 0;
+}
