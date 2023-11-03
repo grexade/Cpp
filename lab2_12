@@ -17,3 +17,23 @@ int main(void){
 		
 	return 0 ; 
 }
+#include <iostream>
+using namespace std;
+int main(void){
+	
+	int num1,  num2;
+	cout<<"Please enter number 1:";
+	cin>>num1;
+	
+	cout<<"Please enter number 2:";
+	cin>>num2;
+	
+	if(num1>num2)
+		cout<<"Bigeest number is: "<<num1;
+	else if (num1 == num2)
+		cout<<"The numbers are eaqual! ";
+	else
+		cout<<"Bigeest number is: "<<num2;
+	
+	return 0;
+}
