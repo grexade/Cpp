@@ -1,0 +1,20 @@
+#include <iostream>
+using namespace std;
+int main(void){
+	
+	int toy, price, newprice;
+	
+	cout<<"Enter the number of toys: ";
+	cin>>toy;
+	
+	price = 20 * toy;
+	
+	if(price >100){
+		//newprice = price - (0.1*price);	
+		newprice = 0.9*price;
+		cout<<"The price after discount is :"<<newprice;}
+	else
+		cout<<"The price is: "<<price;
+	
+	return 0;
+}
