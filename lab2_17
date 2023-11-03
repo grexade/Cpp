@@ -1,0 +1,21 @@
+#include <iostream>
+using namespace std;
+int main(void){
+	
+	int car;
+	
+	cout<<"How many cars do you have?: ";
+	cin>>car;
+	
+	if(car>=10)
+		cout<<"You are rich!";
+	else if (car>=2 && car<10)
+		cout<<"I Think You are earning really well.";
+	else if (car>0 )
+		cout<<"Nice.";
+	else
+		cout<<"!!!!"
+		
+	
+	return 0 ; 
+}
