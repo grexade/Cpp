@@ -1,0 +1,47 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+int main (void){
+	
+	cout<<"Deluxe Suit = 1500$ per day "<<endl;
+	cout<<"Normal Suit = 750$ per day "<<endl;
+	cout<<"Deluxe Room = 250$ per day  "<<endl;
+	cout<<"Normal Room = 125$ per day "<<endl;
+	
+	int room, day;
+	
+	cout<<"Enter the choice of room (1-4) : ";
+	cin>>room;
+	
+	switch(room){
+		
+		case 1: 
+			cout<<"How many days do you want to stay?"<<endl;
+			cin>>day;
+			cout<<"Total money is :  "<<day * 1500;
+			break;
+		
+		case 2:
+			cout<<"How many days do you want to stay?"<<endl;
+			cin>>day;
+			cout<<"Total money is :  "<<day * 750;
+			break;
+			
+		case 3:
+			cout<<"How many days do you want to stay?"<<endl;
+			cin>>day;
+			cout<<"Total money is :  "<<day * 250;
+			break;
+			
+		case 4:
+			cout<<"How many days do you want to stay?"<<endl;
+			cin>>day;
+			cout<<"Total money is :  "<<day * 125;
+			break;
+			
+		default:
+			cout<<"Wrong input!";
+	}
+	
+	return 0;
+}
