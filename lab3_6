@@ -13,3 +13,28 @@ int main (void){
 	
 	return 0;
 }
+
+
+#include <iostream>
+using namespace std;
+int main(void){
+	
+	int n;
+	
+//	for(n=10; n>0; n--){
+//		
+//		cout<<n<<",";
+//	}
+	
+	n= 10;
+	
+	cout<<n;
+	
+	while(n>0){
+		cout<<","<<n;
+		
+		n--;
+	}
+	
+	return 0;
+}
