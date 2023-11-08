@@ -2,46 +2,13 @@
 using namespace std;
 
 int main() {
-   int num1, num2, num3, num4, num5, max;
-
-   // Get 5 different numbers from the user
-   cout << "Enter five different numbers: ";
-   cin >> num1 >> num2 >> num3 >> num4 >> num5;
-
-   // Find the maximum number among the entered numbers
-   max = num1;
-   if (num2 > max) {
-      max = num2;
-   }
-   if (num3 > max) {
-      max = num3;
-   }
-   if (num4 > max) {
-      max = num4;
-   }
-   if (num5 > max) {
-      max = num5;
-   }
-
-   // Display the maximum number
-   cout << "The greatest number entered is: " << max << endl;
-
-   return 0;
-}
-
-#include <iostream>
-using namespace std;
-
-int main() {
    int num, max, count = 1;
 
-   // Get the first number from the user
    cout << "Enter number " << count << ": ";
    cin >> num;
    max = num;
 
-   // Get the remaining 4 numbers from the user
-   count++;
+
    while (count <= 5) {
       cout << "Enter number " << count << ": ";
       cin >> num;
@@ -51,7 +18,6 @@ int main() {
       count++;
    }
 
-   // Display the maximum number
    cout << "The greatest number entered is: " << max << endl;
 
    return 0;
