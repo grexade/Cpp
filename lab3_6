@@ -38,3 +38,29 @@ int main(void){
 	
 	return 0;
 }
+
+#include <iostream>
+using namespace std;
+int main(void){
+	
+	int n=10;
+	cout<<n;
+	for(n=9;n>0;n--){
+		
+		cout<<","<<n;
+	}
+
+//	int num=10;
+//	
+//	cout<<num;
+//	num--;
+//	while(num>0){
+//		cout<<","<<num;
+//		
+//	num--;
+//	}
+	
+	
+	
+	return 0;
+}
