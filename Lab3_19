@@ -30,3 +30,26 @@ int main() {
 
     return 0;
 }
+
+#include <iostream>
+using namespace std;
+int main() {
+    const int rows = 26;
+
+    // Display the right-angled triangle
+    for (int i = 0; i < rows; ++i) {
+        // Display alphabets starting from 'A' to 'A + i'
+        char alphabet = 'a';
+
+        for (int j = 0; j <= i; ++j) {
+            cout << alphabet << " ";
+            alphabet++;
+        }
+
+        // Move to the next line after each row
+        cout << endl;
+    }
+
+    return 0;
+}
+
