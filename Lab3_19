@@ -1,0 +1,32 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int rows;
+
+    // Get the number of rows for the triangle from the user
+    cout << "Enter the number of rows for the triangle: ";
+    cin >> rows;
+
+    // Check if the entered value is valid
+    if (rows < 1) {
+        cout << "Please enter a positive integer for the number of rows." << std::endl;
+        return 1;
+    }
+
+    // Display the right-angled triangle
+    for (int i = 1; i <= rows; ++i) {
+        // Display alphabets starting from 'A' in each row
+        char alphabet = 'a';
+
+        for (int j = 1; j <= i; ++j) {
+            cout << alphabet << " ";
+            ++alphabet;
+        }
+
+        // Move to the next line after each row
+        cout << std::endl;
+    }
+
+    return 0;
+}
