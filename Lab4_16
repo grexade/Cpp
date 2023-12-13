@@ -57,3 +57,82 @@ float calculateAbsolute(int x,int y){
 float calculateSquareRoot(int x,int y){
     return sqrt(x+y*y);
 }
+
+//another method
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+float calculateExponent(int , int );
+int calculatePower(int , int );
+float calculateAbsolute(int, int);
+float calculateSquareRoot(int, int);
+
+int main(void){
+	int x,y, choice;
+	
+	cout<<"Please enter x: ";
+	cin>>x;
+	cout<<"Please enter y: ";
+	cin>>y;
+	
+	cout<<" To call calculateExponent"<<endl;
+	cout<<" To call calculatePower"<<endl;
+	cout<<" To call calculateAbsolute"<<endl;
+	cout<<" To call calculateSquareRoot"<<endl;
+	
+	cout<<"Enter a choice: ";
+	cin>>choice;
+	
+	switch(choice){
+		
+		case 1: 
+			cout<<"The Result is "<<calculateExponent(x, y);
+			break;
+		case 2:
+			cout<<"The Result is "<<calculatePower( x, y);
+			break;
+		case 3:
+			cout<<"The Result is "<<calculateAbsolute(x,  y);
+			break;
+		case 4:
+			cout<<"The Result is "<<calculateSquareRoot(x, y);
+			break;
+		
+	}
+	
+	
+	return 0;
+}
+
+
+float calculateExponent(int x, int y){
+	
+	return exp(x)+y;
+}
+
+int calculatePower(int x, int y){
+	
+	return pow(x,y) + y + pow(y,2);
+}
+
+float calculateAbsolute(int x, int y){
+	
+	return -1 * pow(y,2) + x;
+}
+
+    calculateSquareRoot(int x, int y){
+	
+	return sqrt(x+ pow(y,2));
+}
+
+
+
+
+
+
+
+
+
+
+
