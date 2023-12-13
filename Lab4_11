@@ -20,3 +20,37 @@ void totalAges(){
     cout<<"The Total is: "<<sum;
     
 }
+
+
+#include <iostream>
+using  namespace std;
+void totalAges();
+
+int main() {
+   
+    totalAges();
+    
+    return 0;
+}
+
+void totalAges(){
+	
+	int n, age,sum=0;
+	n=0;
+	while(n<=10){
+		cout<<"Please enter student "<<n<<" age: ";
+		cin>>age;
+		sum+=age;
+		n++;
+	}
+	cout<<"The total is: "<<sum;
+	
+	
+	
+//	for(n=1;n<=10;n++){
+//		cout<<"Please enter student "<<n<<" age: ";
+//		cin>>age;
+//		sum+=age;
+//	}
+//	cout<<"The total is: "<<sum;
+}
