@@ -8,6 +8,15 @@ int countDigits(int num) {
 
     return 1 + countDigits(num / 10);
 }
+void countDigits(int num, int dg){
+	if(num!=0)
+		countDigits(num/10, dg+1);
+	else
+		cout<<dg;
+		
+}
+
+
 
 int main() {
     int num;
