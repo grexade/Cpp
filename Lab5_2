@@ -28,3 +28,41 @@ int main() {
 
     return 0;
 }
+
+
+//////////////
+#include <iostream>
+using namespace std;
+
+void countDigits(int num, int dg){
+	if(num!=0)
+		countDigits(num/10, dg+1);
+	else
+		cout<<dg;
+		
+}
+
+//int countDigits(int num) {
+//    if (num/10 == 0)
+//    
+//        return 1;
+//
+//    return 1 + countDigits(num / 10);
+//}
+
+
+int main() {
+    int num;
+
+    cout << "Input a number: ";
+    cin >> num;
+
+//    cout <<"The number of digits in the number is: " << 
+	if(num==0)
+		countDigits(num, 1); 
+	else
+		countDigits(num, 0);
+		
+		
+    return 0;
+}
