@@ -36,3 +36,22 @@ int main(void){
 	return 0;
 }
 
+#include <iostream>
+using namespace std;
+int main(void){
+	
+	char fullname[15];
+	char lastname[15];
+	
+	
+	cout<<"Enter your name : ";
+	cin>>fullname;
+	
+	cout<<"Enter your surname : ";
+	cin>>lastname;
+	
+	cout<<"Your name is : "<<endl<<fullname<<" "<<lastname;
+	
+	
+	return 0;
+}
