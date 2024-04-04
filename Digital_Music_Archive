@@ -1,0 +1,435 @@
+#include <iostream>
+#include <conio.h>
+#include <stdio.h>
+#include <string.h>
+#include <fstream>
+
+using namespace std;
+
+void saveToFlie();
+struct date
+       {
+       int day, month, year;
+       };
+       
+struct car
+       {
+       int ID;
+       char songname[100], singername[30], category[10];
+       struct date albumdate; 
+       }song_directory;
+
+void add_album()
+{
+	cout<<"\nPlease enter the song ID: ";
+	cin>>song_directory.ID;
+	cout<<"Enter the song name: ";
+	fflush(stdin);
+	fgets(song_directory.songname, 100,stdin);
+	cout<<"Enter the singer name: ";
+	fflush(stdin);
+	fgets(song_directory.singername, 30,stdin);
+	cout<<"Enter the song category[Pop, Rock, Jazz, Blues] : ";
+	fflush(stdin);
+	fgets(song_directory.category, 10,stdin);
+	cout<<"Enter the Album date: ";
+	cout<<"Date: ";
+	cin>>song_directory.albumdate.day;
+	cout<<"Month: ";
+	cin>>song_directory.albumdate.month;
+	cout<<"Year: ";
+	cin>>song_directory.albumdate.year;
+	
+}
+
+char *remove_line(char *str)
+{
+	int i = 0, j =0;
+	while (str[i])
+	{
+		if(str[i] != '\n')
+		str[j++] = str[i];
+		i++;
+	}
+	str[j] = '\0';
+	return str;
+}
+
+void save_album()
+{
+	fstream fo;
+	fo.open("song.txt", ios::out|ios::app);
+	if(!fo)
+		{cout<<"\nFile creation failed";	}
+	else
+	{
+		add_album();
+		fo.write((char*)&song_directory, sizeof(car));
+		fo.close();
+		cout<<"\nData is Saved Successfully!";
+	}
+}
+
+void show_album()
+{
+	cout<<"\n"<<song_directory.ID<<"\t";
+	cout<<remove_line(song_directory.songname)<<"\t\t";
+	cout<<remove_line(song_directory.singername)<<"\t\t";
+	cout<<remove_line(song_directory.category)<<"\t";
+	cout<<song_directory.albumdate.day<<"_";
+	cout<<song_directory.albumdate.month<<"_";
+	cout<<song_directory.albumdate.year;
+}
+
+void display_record()
+{
+	int n=0;
+	fstream fo;
+	cout<<"\n -----List of All Songs-----\n";
+	cout<<"\nID | Song name |\t Singer name | \tCategory |\tAlbum date";
+	fo.open("song.txt",ios::in);
+	if(!fo)
+		{cout<<"File creation Unsuccessful";}
+	else
+	{
+		while(fo.read((char*)&song_directory, sizeof(car)))
+		{
+			show_album();
+		}
+		fo.close();
+	}
+}
+
+void delete_record()
+{
+	int id;
+	int flg=0;
+	fstream fo,fol;
+	cout<<"\nEnter the song ID :";
+	cin>>id;
+	
+	fo.open("song.txt", ios::in|ios::out);
+	fol.open("temp.txt", ios::out);
+	if(!fol)
+		{cout<<"File temp creation Unsuccessful";}
+	if(!fo)
+		{cout<<"File record opening is Unsuccessful";}
+	else
+	{
+		fo.seekg(0, ios::beg);
+		while(fo.read((char*)&song_directory, sizeof(car)))
+		{
+			if(song_directory.ID!= id)
+				{fol.write((char*)&song_directory, sizeof(car));}
+			else
+				flg=1;
+		}
+		fo.close();
+		fol.close();
+		remove("song.txt");
+		rename("temp.txt", "song.txt");
+		
+	}
+	display_record();
+	if(flg==1)
+		{cout<<"\n\nRecord deleted Successfullt";}
+	else
+		{"\n\n Record not found";}
+	
+}
+
+void update_record()
+{
+	int id;
+	int flg =0;
+	fstream fo,fol;
+	cout<<"\nEnter the song ID :";
+	cin>>id;
+	cout<<"\nEnter your modified details: ";
+	fo.open("song.txt", ios::in|ios::out);
+	fol.open("temp.txt", ios::out);
+	if(!fol)
+		{cout<<"File temp creation Unsuccessful";}
+	if(!fo)
+		{cout<<"File record opening is Unsuccessful";}
+	else
+	{
+		fo.seekg(0, ios::beg);
+		while(fo.read((char*)&song_directory, sizeof(car)))
+		{
+			if(song_directory.ID==id)
+				{
+				add_album();
+				fol.write((char*)&song_directory, sizeof(car));
+				flg=1;
+				}
+			else
+				{
+					fol.write((char*)&song_directory, sizeof(car));	
+				}
+		}
+		fo.close();
+		fol.close();
+		remove("song.txt");
+		rename("temp.txt", "song.txt");
+		
+	}
+	display_record();
+	if(flg==1)
+		{cout<<"\n\nRecord Updated Successfully";}
+	else
+		{cout<<"\n\nRecord not found";}
+}
+
+void search_record(char ch)
+{
+	char song_name[30];
+	char singer_name[30];
+	int flg =0;
+	fstream fo;
+	fo.open("song.txt", ios::in);
+	if(!fo)
+	{
+		cout<<"\nFile record opening unsuccessful";
+	}
+	else
+	{
+		if(ch=='A')
+		{
+			fflush(stdin);
+			cout<<"\nEnter song name";
+			fgets(song_name,30,stdin);
+			while(fo.read((char*)&song_directory, sizeof(car)))
+			{
+				if((strcmp(song_directory.songname, song_name)==0))
+				{
+					show_album();
+					flg=1;
+				}
+			}
+		}
+		else if(ch=='B')
+		{
+			fflush(stdin);
+			cout<<"\nEnter singer name :";
+			fgets(singer_name,30,stdin);
+			while(fo.read((char*)&song_directory, sizeof(car)))
+			{
+				if((strcmp(song_directory.singername, singer_name)==0))
+				{
+					show_album();
+					flg=1;
+				}
+			}
+		}
+		fo.close();
+	}
+	if(flg==1)
+	{
+		cout<<"\nFile record found successful";
+	}
+	else
+	{
+		cout<<"\nRecord not found...";
+	}
+}
+
+int count_line()
+{
+	int count = 0;
+	fstream fo;
+	fo.open("song.txt", ios::in);
+	if(!fo)
+		cout<<"File creation failed";
+	else
+	{
+		while(fo.read((char*)&song_directory, sizeof(car)))
+		{
+			count++;
+		}
+	}
+	return count;
+}
+
+void print_id(int id)
+{
+	fstream fo;
+	fo.open("song.txt", ios::in);
+	if(!fo)
+	cout<<"File creation failed";
+	else
+	{
+		while(fo.read((char*)&song_directory, sizeof(car)))
+		{
+			if(song_directory.ID==id)
+			{
+				show_album;
+			}
+		}
+	}
+}
+
+void print_cat(char cat[10])
+{
+	fstream fo;
+	fo.open("song.txt", ios::in);
+	if(!fo)
+	cout<<"File creation failed";
+	else
+	{
+		while(fo.read((char*)&song_directory, sizeof(car)))
+		{
+			if(strcmp(cat,song_directory.category)==0)
+			{
+				show_album();
+			}
+		}
+	}
+}
+
+void sort (char ch)
+{
+	int i=0;
+	int size = count_line();
+	int arr[size];
+	char ar[size][10];
+	fstream fo;
+	cout<<"\n----List of All Songs----\n";
+	cout<<"\nId  |  Song name  |\tSinger name  | \tCategory  | |tAlbum date";
+	fo.open("song.txt", ios::in);
+	if(!fo)
+		cout<<"File creation failed";
+	else
+	{
+		while(fo.read((char*)&song_directory, sizeof(car)))
+		{
+			arr[i]=song_directory.ID;
+			strcpy(ar[i],song_directory.category);
+			i++;
+		}
+	}
+	fo.close();
+	
+	if(ch=='A' || ch=='a')
+	{
+		for(i=0; i<size;i++)
+		{
+			for(int j=i+1; j<size; j++)
+			{
+				if(arr[i]>arr[j])
+				{
+					int temp = arr[i];
+					arr[i]=arr[j];
+					arr[j]=temp;
+				}
+			}
+		}
+		for(i=0; i<size; i++)
+		{
+			print_id(arr[i]);
+		}
+	}
+	else if(ch=='B' || ch=='b')
+	{
+		for(i=0; i<size;i++)
+		{
+			for(int j=i+1; j<size; j++)
+			{
+				if(arr[i]<arr[j])
+				{
+					int temp = arr[i];
+					arr[i]=arr[j];
+					arr[j]=temp;
+				}
+			}
+		}
+		for(i=0; i<size; i++)
+		{
+			print_id(arr[i]);
+		}
+	}
+	else if(ch=='C')
+	{
+		char temp[10];
+		for(i=0; i<size;i++)
+		{
+			for(int j=i+1; j<size; j++)
+			{
+				if(strcmp(ar[j-1],ar[j])>0)
+				{
+					strcpy(temp, ar[j-1]);
+					strcpy(ar[j-1], ar[j]);
+					strcpy(ar[j], temp);
+				}
+			}
+		}
+		for(i=0; i<size; i++)
+		{
+			print_cat(ar[i]);
+		}
+	}
+}
+
+int main(void)
+{
+	int choice;
+	char ch;
+	do
+	{
+		cout<<"\n\n";
+		cout<<"\n\tDigital Music Archive System";
+		cout<<"\n\n";
+		cout<<"\n1- Add a new Song to the directory";
+		cout<<"\n2- Delete a Song from the directory";
+		cout<<"\n3- List all song in the directory";
+		cout<<"\n4- Search a song:";
+		cout<<"\n\tA - Search according to ID";
+		cout<<"\n\tB - Search according to category";
+		cout<<"\n5-  Update Song Information";
+		cout<<"\n6- Sort according to ID";
+		cout<<"\n\tA - In ascending order";
+		cout<<"\n\tB - In descending order";
+		cout<<"\n7- Sort according to category in alphabetic order";
+		cout<<"\n8- Quit";
+		cout<<"\nEnter your choice :";
+		cin>>choice;
+		if(choice==1)
+		{
+			save_album();
+		}
+		else if(choice==2)
+		{
+			delete_record();
+		} 
+		else if(choice==3)
+		{
+			show_album();
+		}
+		else if(choice==4)
+		{
+			cout<<"\nEnter your option A/B :";
+			cin>>ch;
+			search_record(ch);
+		}
+		else if(choice==5)
+		{
+			update_record();
+		}
+		else if(choice==6)
+		{
+			cout<<"\nEnter your option A/B :";
+			cin>>ch;
+			sort(ch);
+		}
+		else if (choice ==7)
+		{
+			sort('C');
+		}
+		getch();
+	}
+		while(choice!=8);
+		
+		return 0;
+	}
+
+
