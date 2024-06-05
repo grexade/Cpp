@@ -1,0 +1,53 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main()
+{
+    int choice, l, w;
+    char response;
+    float rec, square, circle, sum;
+
+do {
+    cout<<endl;
+    cout << "R-Rectangle" << endl;
+    cout << "S-square" << endl;
+    cout << "C-Circle" << endl;
+    cout << "press x to exit" << endl;
+    cout << "Which operation would you like to select? : ";
+    cin >> response;
+    
+   switch (response)
+    {
+    case 'R':
+        cout <<endl<< "what is length?: ";
+        cin >> l;
+        cout << "what is width? : ";
+        cin >> w;
+        sum = l * w;
+        cout << " Area of a rectangle is: " << sum<<endl;
+        break;
+
+    case 'S':
+        cout <<endl<< "what is length?: ";
+        cin >> l;
+        sum = 4 * l;
+        cout << " Area of a square is: " << sum<<endl;
+        break;
+
+    case 'C':
+        cout <<endl<< "what is radius?: ";
+        cin >> l;
+        sum = 3.14 * l;
+        cout << " Area of a circle is: " << sum<<endl;
+        break;
+
+    default:
+        cout << "Wrong choice ";
+        break;
+    }
+}
+while (response!='x');
+    
+    return 0;
+}
